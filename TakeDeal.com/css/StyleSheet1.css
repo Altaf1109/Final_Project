@@ -1,0 +1,17 @@
+﻿.createAc{
+    font-size : 20pt;
+    text-decoration : none ;
+}
+
+.createAc:hover{
+    text-decoration:none;
+    cursor:pointer;
+    color:coral;
+}
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+#lblReg{
+    font-family: 'Paytone One', sans-serif;
+    color:aqua;
+    width:500px;
+   
+}

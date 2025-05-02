@@ -1,0 +1,191 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="NavMaster.master.cs" Inherits="NavMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+                         
+                <%--Font Awesome--%>
+     <script src="https://kit.fontawesome.com/31eed72dbe.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/btn.css" />
+    <link rel="stylesheet" href="css/StyleSheet1.css" />
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+
+    <!-- Notification Icon Material-icon -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+   
+    <style>
+        .icon-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  color: #333333;
+  background: #dddddd;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+}
+
+.icon-button:hover {
+  cursor: pointer;
+}
+
+.icon-button:active {
+  background: #cccccc;
+}
+
+.icon-button__badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 25px;
+  height: 25px;
+  background: red;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+        .imgbtn{
+            width:50px;
+            height:50px;
+            border-radius:50px;
+        }
+        .cat{
+            color: red;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky" style="height: 70px;">
+            <a class="navbar-brand" id="animate-charcter" href="/Home.aspx">TakeDeal</a>
+            <%--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>--%>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <div class="container" style="height: 40px; width:430px;">
+                            <div class="search_wrap search_wrap_1">
+                                <div class="search_box">
+                                    <input runat="server" type="text" class="input" placeholder="Mobiles,Cars,Laptops..." />
+                                    <div class="btn btn_common" onclick="fsearchButton()" role="button" id="searchButton">
+                                        <!-- <i class="fa-solid fa-magnifying-glass"></i> -->
+                                        <i class="fas fa-search" ></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                   <%-- <li class="nav-item">
+                        <div><a class="nav-link" style="color: chartreuse;" href="../AboutUs.aspx">About Us</a></div>
+                    </li>--%>
+                    <li class="nav-item">
+<%--                        <div><a class="nav-link" style="color: chartreuse;" href="/CatrgoriesList.aspx"> Categories</a>--%>
+                            <asp:HyperLink CssClass="nav-link cat active" NavigateUrl="~/CatrgoriesList.aspx"  ID="HyperLink1" runat="server"> + Sell</asp:HyperLink>
+                       
+                    </li>
+                    <li class="nav-item" style="margin-top: 6px; margin-left:25px;">
+                        
+                       <%-- <button type="button" id="bellicon" >
+                            <span class="material-icons">notifications
+                            </span>
+                            <span class="icon-button__badge" style="position: absolute; top: -10px; right: -10px; width: 25px; height: 25px; background: red; color: white; display: flex; justify-content: center; align-items: center; border-radius: 50px;">25</span>
+                        </button>--%>
+                        <asp:HyperLink NavigateUrl="~/AllMsgs.aspx" ID="HyperLink2" runat="server">
+                        <button type="button"  class="icon-button">
+                         <span class="material-icons">notifications</span>
+                         <span class="icon-button__badge">
+                             <asp:Label ID="msg" runat="server" Text="0"></asp:Label></span>
+                         </button>
+                        </asp:HyperLink>
+
+                    </li>
+                        <li class="nav-item" style="position:absolute;right:100px">
+                        <div class="dropdown">
+                             <%--<button  class="button-85" role="button" onclick="fsearchButton()">Login</button>--%>  
+                            <asp:Button ID="btnLogin"  CssClass="btn dropdown-toggle btn-light mt-1 mr-5" runat="server" data-toggle="dropdown"  aria-expanded="false"  Text=""  />                        
+                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                     <a class="dropdown-item" href="ShowAds.aspx"><i class="fa-solid fa-rectangle-list"></i>&nbsp&nbsp;My Ads</a>
+                     <a class="dropdown-item" href="../UserProfile.aspx"><i class="fa-solid fa-user"></i>&nbsp;&nbspProfile</a>
+                     <a class="dropdown-item" href="contact-form-13/Default.aspx"><i class="fa-solid fa-circle-info"></i>&nbsp&nbsp;Feedback</a>
+                         
+                         <a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i>&nbsp&nbsp;Settings</a>
+                        <a class="dropdown-item" href="../Logout.aspx"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp&nbsp;Logout</a>
+                       </div>
+                        </div>
+                    </li>
+                    <li class="nav-item"  style="position: absolute; right: 20px; margin-top: 4px;">
+                        <div class="dropdown">
+                             <%--<button  class="button-85" role="button" onclick="fsearchButton()">Login</button>--%>  
+                            <asp:Button ID="btnlogin2"  CssClass="btn btn-light mt-1 mr-5" runat="server"   Text="Login" OnClick="btnlogin2_Click"  />                        
+                            <%--  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                     <a class="dropdown-item" href="#"><i class="fa-solid fa-rectangle-list"></i>&nbsp&nbsp;My Ads</a>
+                     <a class="dropdown-item" href="#"><i class="fa-solid fa-user"></i>&nbsp;&nbspProfile</a>
+                     <a class="dropdown-item" href="#"><i class="fa-solid fa-circle-info"></i>&nbsp&nbsp;Help</a>
+                         
+                         <a class="dropdown-item" href="#"><i class="fa-solid fa-gear"></i>&nbsp&nbsp;Settings</a>
+                        <a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>&nbsp&nbsp;Logout</a>
+                       </div>--%>
+                        </div>
+                    </li>
+                    <%--<li class="nav-item ml-3 mt-1" >
+                        <div class="dropdown">
+                          
+                            <asp:Button ID="Button2" class="btn btn-light dropdown-toggle mt-" data-toggle="dropdown"  aria-expanded="false" runat="server" Text="Girish Sutrave" />
+                            <%--<asp:ImageButton Width="50" class="btn btn-light dropdown-toggle imgbtn" data-toggle="dropdown"  aria-expanded="false" ID="ImageButton1" runat="server" ImageUrl="~/Img/Snapchat-66051600.jpg" />--%>     
+         <%--            <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+        Girish Sutrave
+  </button>--%>
+                     <%--<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                     <a class="dropdown-item" href="#">My Adds</a>
+                     <a class="dropdown-item" href="#">Profile</a>
+                     <a class="dropdown-item" href="#">Help</a>
+                         <a class="dropdown-item" href="#">Logout</a>
+                         <a class="dropdown-item" href="#">Settings</a>
+                    </div>--%>
+                   
+                    
+                   <%-- <li>
+                        <div class="mt-2" style="display:flex;border-radius:5px;background-color:white;"><asp:Button CssClass="btn btn-light"  ID="Button3" runat="server" Text="Button" /> <i style="font-size:20px;" class="mt-2 fa-solid fa-circle-chevron-down"></i> </div>
+                    </li>--%>
+                </ul>
+            </div>
+        </nav>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+
+    </form>
+    <script>
+        function btnlgn() {
+            window.location.replace("http://www.w3schools.com");
+        }
+        function fsearchButton()
+        {
+            window.location.replace("http://www.w3schools.com");
+        }
+    </script>
+    <script src="Scripts/jquery-3.0.0.slim.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.min.js"></script>
+    <script src="Scripts/jquery-3.6.0.min.js"></script>
+</body>
+</html>
