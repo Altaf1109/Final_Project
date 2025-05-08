@@ -101,7 +101,7 @@
                                         <h6 class="ml-3 font-weight-bolder">CONFIRM YOUR LOCATION
                                             <asp:Label ID="Label17" runat="server" ForeColor="Red"></asp:Label>
                                         </h6>
-                                        CONFIRM YOUR LOCATION</h6><br /><div class="dropdown">
+                                        CONFIRM YOUR LOCATION<br /><div class="dropdown">
                                             <div class="row">
                                                 <div class="col">
                                                     <asp:Label ID="Label11" runat="server" CssClass="ml-3" Text="Country*"></asp:Label>
@@ -134,7 +134,7 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <h6 class="ml-3 font-weight-bolder">REVIEW YOUR DETAILS 
+                                        <h6 class="ml-3 font-weight-bolder">REVIEW YOUR DETAILS </h6>
                                             <br />
                                             <asp:Label ID="Label12" runat="server" CssClass="ml-3" Text="Name *"></asp:Label>
                                             <asp:TextBox ID="txtName" CssClass="form-control ml-3 searchTextField" runat="server" Width="500px" Height="45px" Font-Size="13pt" Enabled="False" />
